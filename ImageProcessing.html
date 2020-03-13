@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Image Processing App</title>
+
+    <script src="ImageProcessing.js"></script>
+	<!--
+	<script>	
+		
+		var cnt = 0;
+
+		function clickListener(e){
+			cnt++;
+		};
+		document.onclick = clickListener;
+	</script>
+	-->
+  </head>
+  <body>
+    <!--<div class="center" id="container">-->
+    <div id="header">
+      <h1>Image Processing Application</h1>
+      <h2>Select an Image to Process:</h2>
+    </div>
+    <div>
+      <input
+        type="file"
+        accept=".png, .jpg, .jpeg"
+        onchange="loadFile(event)"
+      />
+
+      <div class="row">
+        <div class="column">
+          <img
+            style="padding: 20px;"
+            id="inputImage"
+            class="img-frame"
+            alt=""
+            width="200"
+          />
+        </div>
+		
+		<!-- Testing -->
+		<div class="column">
+               <div id="imageProcessor">
+        <div style="float: left; width: 30%;">
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_horizontal"
+              value="FLIP_HORIZONTAL"
+			  checked
+            />
+            <span>Flip Horizontal</span>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_vertical"
+              value="FLIP_VERTICAL"
+            />
+            <span>Flip Vertical</span>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_rotate"
+              onclick="ShowHideDiv1()"
+              value="ROTATE"
+            />
+            <span>Rotate</span><br />
+            <div id="rotateAttr" style="display: none">
+              Degree (-/+):
+              <input type="text" id="txtDegreeRot" />
+            </div>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_grayscale"
+              value="GRAYSCALE"
+            />
+            <span>Grayscale</span>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_resize"
+              onclick="ShowHideDiv2()"
+              value="RESIZE"
+            />
+            <span>Resize</span><br />
+            <div id="widthHeight" style="display: none">
+              Width:
+              <input type="text" id="txtWidthRes" />
+              <br />
+              Height:
+              <input type="text" id="txtHeightRes" />
+            </div>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_thumbnail"
+              value="THUMBNAIL"
+            />
+            <span>Thumbnail</span>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_rotate_left"
+              value="ROTATE_LEFT"
+            />
+            <span>Rotate Left</span>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="radioClick"
+              id="radio_rotate_right"
+              value="ROTATE_RIGHT"
+            />
+            <span>Rotate Right</span>
+          </div>
+          <div>
+            <button onclick="UserAction()">Apply Transformation</button>
+          </div>
+        </div>
+      </div> 
+        </div>
+		<!-- End of Testing -->
+		
+        <div class="column">
+          <img id="outputImage" width="200" alt="" class="img-frame" />
+        </div>
+      </div>
+	  
+    <div id="footer">
+      <hr />
+      <h2 class="left" id="contact">Webpage Created by</h2>
+      <small id="name"
+        ><i
+          >Mauricio A. Encina <br /><a href="mailto:encinamauric@seattleu.edu"
+            >contact me</a
+          ><br />Copyright &copy; FQ 2020</i
+        ></small
+      >
+    </div>
+  </body>
+</html>
